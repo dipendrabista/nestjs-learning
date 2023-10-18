@@ -1,10 +1,19 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post } from '@nestjs/common';
 
-@Controller('messages')
+@Controller('/messages')
 export class MessagesController {
 
     @Get()
-    index() {
+    listMessages() {
         return 'index';
+    }
+
+    @Post()
+    createMessages() {
+        return 'Hi there!';
+    }
+    @Get('/:id')
+    getMessage() {
+        return 'get particular message!';
     }
 }
