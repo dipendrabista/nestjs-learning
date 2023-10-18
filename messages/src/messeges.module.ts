@@ -4,4 +4,4 @@ import { MessagesController } from './messages/messages.controller';
 @Module({
   controllers: [MessagesController]
 })
-export class MessegesModule {}
+export class MessegesModule { }
