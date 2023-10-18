@@ -5,5 +5,5 @@ export declare class MessagesController {
     constructor();
     listMessages(): Promise<any>;
     createMessages(body: CreateMessageDto): Promise<void>;
-    getMessage(id: string): Promise<any>;
+    getMessage(id: string): Promise<void>;
 }

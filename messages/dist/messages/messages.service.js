@@ -6,7 +6,7 @@ class MessagesService {
     constructor() {
         this.messagesRepository = new messages_repository_1.MessagesRepository();
     }
-    findOne(id) {
+    async findOne(id) {
         return this.messagesRepository.findOne(id);
     }
     findAll() {
