@@ -1,8 +1,7 @@
 import { Module } from '@nestjs/common';
 import { CpuService } from './cpu.service';
-import { CpuService } from './cpu.service';
 
 @Module({
   providers: [CpuService]
 })
-export class CpuModule {}
+export class CpuModule { }
