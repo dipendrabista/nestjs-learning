@@ -1,6 +1,8 @@
+import { Injectable } from "@nestjs/common";
 import { writeFile } from "fs";
 import { readFile } from "fs/promises";
 
+@Injectable()
 export class MessagesRepository {
 
     async findOne(id: string) {
@@ -27,4 +29,8 @@ export class MessagesRepository {
         });
 
     }
+}
+
+function Injectible(): (target: typeof MessagesRepository) => void | typeof MessagesRepository {
+    throw new Error("Function not implemented.");
 }
