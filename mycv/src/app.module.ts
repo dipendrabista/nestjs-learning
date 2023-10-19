@@ -11,9 +11,9 @@ import { UsersModule } from './users/users.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'sqlite',
-      database: 'db.sqlite',
+      database: 'db.sqlite', //file name we want to load data into
       entities: [User, Report],
-      synchronize: true,
+      synchronize: true, //migration is used to change the structure of the database[true ==>is only used in dev Environment]
     }),
     UsersModule,
     ReportsModule,
