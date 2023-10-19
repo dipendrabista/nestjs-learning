@@ -8,10 +8,18 @@ Content-Type: application/json
     "password":"admin@123"
 }
 ###find single user
-GET  http://localhost:3000/auth/1
+GET  http://localhost:3000/auth/3
 
 ###find all users with given email
 GET  http://localhost:3000/auth?email=dipendra.bista@cotiviti.com
 
 ### delete user with given id
-DELETE   http://localhost:3000/auth/2
+DELETE   http://localhost:3000/auth/1
+
+### delete user with given id
+PATCH   http://localhost:3000/auth/3
+Content-Type: application/json
+
+{
+    "email":"punojbista@gmail.com"
+}
