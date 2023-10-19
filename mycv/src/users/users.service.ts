@@ -11,7 +11,32 @@ export class UsersService {
   create(email: string, password: string) {
     const user = this.repo.create({ email, password });
     this.repo.save(user);
-    //or ==>HOOKS will not be executed when we directly save object 
+    //or ==>HOOKS will not be executed when we directly save object
     // this.repo.save({ email, password });
+  }
+
+  findOne(id: number) {
+    return this.repo.findOne({ where: { id: id } });
+  }
+  find(email: string) {
+    return this.repo.find({ where: { email } });
+  }
+
+  async update(id: number, attrs: Partial<User>) {
+    const user = await this.findOne(id);
+    if (!user) {
+      throw new Error("User Not Found !");
+    }
+    Object.assign(user, attrs);
+    return this.repo.save(user);
+  }
+
+  async remove(id: number) {
+    const user = await this.findOne(id);
+    if (!user) {
+      throw new Error();
+    }
+
+    this.repo.remove(user);
   }
 }
