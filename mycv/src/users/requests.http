@@ -35,3 +35,9 @@ Content-Type: application/json
 {
     "email":"punojbista@gmail.com"
 }
+
+### Set a color
+GET    http://localhost:3000/auth/colors/blue
+
+### Get a color
+GET    http://localhost:3000/auth/colors/
