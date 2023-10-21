@@ -53,7 +53,7 @@ export class UsersController {
 
   @Get("/whoami")
   showAmI(@CurrentUser() user: string) {
-    return user; // it will return first record from the database
+    return user;
   }
 
   @Get("/:id")
