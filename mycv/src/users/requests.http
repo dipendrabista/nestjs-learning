@@ -4,7 +4,7 @@ POST http://localhost:3000/auth/signup
 Content-Type: application/json
 
 {
-    "email":"punoj.bista@cotiviti.com",
+    "email":"test@test.com",
     "password":"nepal@123"
 }
 
@@ -14,8 +14,8 @@ POST http://localhost:3000/auth/signin
 Content-Type: application/json
 
 {
-    "email":"punoj.bista@cotiviti.com",
-    "password":"nepal@1234"
+    "email":"punoj@cotiviti.com",
+    "password":"nepal@123"
 }
 
 
@@ -36,8 +36,3 @@ Content-Type: application/json
     "email":"punojbista@gmail.com"
 }
 
-### Set a color
-GET    http://localhost:3000/auth/colors/blue
-
-### Get a color
-GET    http://localhost:3000/auth/colors/

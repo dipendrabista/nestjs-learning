@@ -10,7 +10,7 @@ export class UsersService {
 
   create(email: string, password: string) {
     const user = this.repo.create({ email, password });
-    this.repo.save(user);
+    return this.repo.save(user);
     //or ==>HOOKS will not be executed when we directly save object
     // this.repo.save({ email, password });
   }
