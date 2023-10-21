@@ -1,4 +1,8 @@
-import { BadRequestException, Injectable } from "@nestjs/common";
+import {
+    BadRequestException,
+    Injectable,
+    NotFoundException,
+} from "@nestjs/common";
 import { scrypt as _scrypt, randomBytes } from "crypto"; //scrypt uses callbacks instead of promise/Observable which
 import { UsersService } from "./users.service";
 // is old style of writing asynchronous programming
@@ -35,5 +39,17 @@ export class AuthService {
     //return a user
     return user;
   }
-  signin() {}
+  async signin(email: string, password: string) {
+    //getting single user using destructuring
+    const [user] = await this.userService.find(email);
+    if (!user) {
+      throw new NotFoundException("User not Found");
+    }
+    const [salt, storedHash] = user.password.split(".");
+    const hash = (await scrypt(password, salt, 32)) as Buffer;
+    if (storedHash !== hash.toString("hex")) {
+      throw new BadRequestException("Bad Password");
+    }
+    return user;
+  }
 }

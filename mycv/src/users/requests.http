@@ -1,4 +1,4 @@
-##Create a new user
+###Create a new user
 
 POST http://localhost:3000/auth/signup
 Content-Type: application/json
@@ -7,6 +7,18 @@ Content-Type: application/json
     "email":"punoj.bista@cotiviti.com",
     "password":"nepal@123"
 }
+
+### signin a user
+
+POST http://localhost:3000/auth/signin
+Content-Type: application/json
+
+{
+    "email":"punoj.bista@cotiviti.com",
+    "password":"nepal@1234"
+}
+
+
 ###find single user
 GET  http://localhost:3000/auth/6
 
