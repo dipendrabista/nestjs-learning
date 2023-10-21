@@ -17,6 +17,8 @@ import { UpdateUserDto } from "./dtos/update-user.dto";
 import { UserDto } from "./dtos/user.dto";
 import { UsersService } from "./users.service";
 
+import { CurrentUser } from "./decorators/current-user.decorators";
+
 @Controller("auth")
 @Serialize(UserDto) //Controller Wide Serialization
 export class UsersController {
@@ -44,10 +46,16 @@ export class UsersController {
     session.userId = null;
   }
 
+  // @Get("/whoami")
+  // showAmI(@Session() session: any) {
+  //   return this.userService.findOne(session.userId); // it will return first record from the database
+  // }
+
   @Get("/whoami")
-  showAmI(@Session() session: any) {
-    return this.userService.findOne(session.userId); // it will return first record from the database
+  showAmI(@CurrentUser() user: string) {
+    return user; // it will return first record from the database
   }
+
   @Get("/:id")
   async findUser(@Param("id") id: string) {
     const user = await this.userService.findOne(parseInt(id));
