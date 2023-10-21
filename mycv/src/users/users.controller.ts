@@ -39,9 +39,14 @@ export class UsersController {
     return user;
   }
 
+  @Post("/signout")
+  signout(@Session() session: any) {
+    session.userId = null;
+  }
+
   @Get("/whoami")
   showAmI(@Session() session: any) {
-    return this.userService.findOne(session.userId);
+    return this.userService.findOne(session.userId); // it will return first record from the database
   }
   @Get("/:id")
   async findUser(@Param("id") id: string) {

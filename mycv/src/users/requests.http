@@ -18,6 +18,15 @@ Content-Type: application/json
     "password":"nepal@123"
 }
 
+### Getting Currently logged in User
+GET    http://localhost:3000/auth/whoami
+
+
+### signout a user
+
+POST http://localhost:3000/auth/signout
+Content-Type: application/json
+
 
 ###find single user
 GET  http://localhost:3000/auth/6
@@ -36,9 +45,3 @@ Content-Type: application/json
     "email":"punojbista@gmail.com"
 }
 
-PATCH   http://localhost:3000/auth/5
-Content-Type: application/json
-
-{
-    "email":"punojbista@gmail.com"
-}
