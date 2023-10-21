@@ -38,6 +38,11 @@ export class UsersController {
     session.userId = user.id;
     return user;
   }
+
+  @Get("/whoami")
+  showAmI(@Session() session: any) {
+    return this.userService.findOne(session.userId);
+  }
   @Get("/:id")
   async findUser(@Param("id") id: string) {
     const user = await this.userService.findOne(parseInt(id));

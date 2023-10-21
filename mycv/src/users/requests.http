@@ -36,3 +36,9 @@ Content-Type: application/json
     "email":"punojbista@gmail.com"
 }
 
+PATCH   http://localhost:3000/auth/5
+Content-Type: application/json
+
+{
+    "email":"punojbista@gmail.com"
+}
