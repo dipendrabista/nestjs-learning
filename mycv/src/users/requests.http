@@ -4,20 +4,20 @@ POST http://localhost:3000/auth/signup
 Content-Type: application/json
 
 {
-    "email":"dipendra.bista@cotiviti.com",
-    "password":"admin@123"
+    "email":"punoj.bista@cotiviti.com",
+    "password":"nepal@123"
 }
 ###find single user
-GET  http://localhost:3000/auth/3
+GET  http://localhost:3000/auth/6
 
 ###find all users with given email
 GET  http://localhost:3000/auth?email=dipendra.bista@cotiviti.com
 
 ### delete user with given id
-DELETE   http://localhost:3000/auth/1
+DELETE   http://localhost:3000/auth/5
 
-### delete user with given id
-PATCH   http://localhost:3000/auth/3
+### update user with given id
+PATCH   http://localhost:3000/auth/5
 Content-Type: application/json
 
 {
