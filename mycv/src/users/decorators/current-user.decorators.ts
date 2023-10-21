@@ -10,7 +10,6 @@ export const CurrentUser = createParamDecorator(
   (data: never, context: ExecutionContext) => {
     const request = context.switchToHttp().getRequest(); //context is used for other WebSockets,http and rpc as well
     console.log("I am signing as ", request.session.userId);
-
-    return "hi there";
+    return request.CurrentUser;
   },
 );
